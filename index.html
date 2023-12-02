@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- import bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+    <div id="container">
+      <div class="playerlist">
+        <h2>Players</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Club</th>
+              <th>Nom et Prénom</th>
+              <th>Classement Aller</th>
+              <th>Classement Retour</th>
+              <th>FFTT ph1</th>
+              <th>FFTT ph2</th>
+              <th>Club FFTT</th>
+              <th>Mutation</th>
+            </tr>
+          </thead>
+          <tbody id="playerlist"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      const playerlist = document.getElementById("playerlist");
+
+      fetch("./players.csv") // Fetch the CSV file
+        .then((response) => response.text()) // Convert the response to text
+        .then((csv) => {
+          // Split the CSV into an array of rows
+          const rows = csv.split("\n");
+
+          // Remove the header row
+          rows.shift();
+
+          // Loop through the rows and create a list item for each row
+          rows.forEach((row) => {
+            const [club, fullName, pointsForward, pointsBackward, ffttForward, ffttBackward, ffttClub, mutation] = row.split(",");
+
+            playerlist.innerHTML += `
+              <tr>
+                <td>${club}</td>
+                <td>${fullName}</td>
+                <td>${pointsForward}</td>
+                <td>${pointsBackward}</td>
+                <td>${ffttForward}</td>
+                <td>${ffttBackward}</td>
+                <td>${ffttClub}</td>
+                <td>${mutation}</td>
+              </tr>
+            `;
+          });
+        });
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+</style>
