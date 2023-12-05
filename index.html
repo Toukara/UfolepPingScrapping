@@ -30,38 +30,8 @@
         </table>
       </div>
     </div>
-
-    <script>
-      const playerlist = document.getElementById("playerlist");
-
-      fetch("./players.csv") // Fetch the CSV file
-        .then((response) => response.text()) // Convert the response to text
-        .then((csv) => {
-          // Split the CSV into an array of rows
-          const rows = csv.split("\n");
-
-          // Remove the header row
-          rows.shift();
-
-          // Loop through the rows and create a list item for each row
-          rows.forEach((row) => {
-            const [club, fullName, pointsForward, pointsBackward, ffttForward, ffttBackward, ffttClub, mutation] = row.split(",");
-
-            playerlist.innerHTML += `
-              <tr>
-                <td>${club}</td>
-                <td>${fullName}</td>
-                <td>${pointsForward}</td>
-                <td>${pointsBackward}</td>
-                <td>${ffttForward}</td>
-                <td>${ffttBackward}</td>
-                <td>${ffttClub}</td>
-                <td>${mutation}</td>
-              </tr>
-            `;
-          });
-        });
-    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
 
