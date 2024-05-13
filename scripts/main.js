@@ -14,8 +14,6 @@ const config = {
   HTTP_COOKIE_UFOLEP62TT: process.env.HTTP_COOKIE_UFOLEP62TT,
 };
 
-console.log(config);
-
 const ScrappingScripts = {
   fetchClassement,
   fetchData,

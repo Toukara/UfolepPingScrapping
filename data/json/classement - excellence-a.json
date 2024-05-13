@@ -1,0 +1,95 @@
+[
+  {
+    "timestamp": 1715628945603,
+    "date": "2024-05-13",
+    "division": "excellence-a"
+  },
+  {
+    "RANK": "1",
+    "CLUB": "Mericourt 1",
+    "POINTS": "33",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "10",
+    "MATCH_DRAWS": "0",
+    "MATCH_LOSES": "3",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "2",
+    "CLUB": "Marquion 2",
+    "POINTS": "32",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "9",
+    "MATCH_DRAWS": "1",
+    "MATCH_LOSES": "3",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "3",
+    "CLUB": "Beaurains 1",
+    "POINTS": "28",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "7",
+    "MATCH_DRAWS": "1",
+    "MATCH_LOSES": "5",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "4",
+    "CLUB": "Bapaume 1",
+    "POINTS": "25",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "4",
+    "MATCH_DRAWS": "4",
+    "MATCH_LOSES": "5",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "4",
+    "CLUB": "Bienvillers au bois 1",
+    "POINTS": "25",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "5",
+    "MATCH_DRAWS": "2",
+    "MATCH_LOSES": "6",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "6",
+    "CLUB": "Tincques 2",
+    "POINTS": "24",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "5",
+    "MATCH_DRAWS": "1",
+    "MATCH_LOSES": "7",
+    "F_B": "0",
+    "DECIDE": ""
+  },
+  {
+    "RANK": "7",
+    "CLUB": "L. Marichelles 1",
+    "POINTS": "20",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "3",
+    "MATCH_DRAWS": "1",
+    "MATCH_LOSES": "9",
+    "F_B": "0",
+    "DECIDE": "12-8"
+  },
+  {
+    "RANK": "8",
+    "CLUB": "Boiry Becquerelle/Croisilles 1",
+    "POINTS": "20",
+    "MATCHES_PLAYED": "13",
+    "MATCH_WINS": "3",
+    "MATCH_DRAWS": "2",
+    "MATCH_LOSES": "7",
+    "F_B": "1",
+    "DECIDE": "8-12"
+  }
+]

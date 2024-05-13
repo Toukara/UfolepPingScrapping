@@ -1,4 +1,5 @@
 import scrapData from "./fetchData.js";
+import writeJson from "./writeFile.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -32,6 +33,7 @@ async function fetchClassement(url) {
       "F/P",
       "départage",
     ];
+
     elementsToRemove.forEach((element) => {
       const index = cellsTrimed.indexOf(element);
       if (index !== -1) {
@@ -39,8 +41,10 @@ async function fetchClassement(url) {
       }
     });
 
-    if (cellsTrimed.length !== 9 || i === 0 || cellsTrimed[(0, 8)] === "")
-      return;
+    if (cellsTrimed.length < 2) return;
+
+    if (cellsTrimed[0] === "") return;
+    console.log(cellsTrimed, cellsTrimed.length);
 
     const resultClub = {
       RANK: cellsTrimed[0],
@@ -57,6 +61,7 @@ async function fetchClassement(url) {
     classement.push(resultClub);
   });
 
+  writeJson(classement, "classement");
   return classement;
 }
 
