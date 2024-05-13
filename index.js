@@ -1,35 +1,32 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import { mkdir, writeFileSync } from "fs";
+import express, { json } from "express";
 // Destructure required properties
-const { URL_UFOLEP62TT_EXCELLENCE1 } = process.env;
+const { URL_UFOLEP62TT_EXCELLENCE1, PORT } = process.env;
+
+const app = express();
 
 // From Scripts folder import
 import ScrappingScripts from "./scripts/main.js";
 
 const { fetchClassement, fetchPlayers } = ScrappingScripts;
 
-async function main(scrapFunction) {
-  const startTimer = new Date().getTime();
-  const name = scrapFunction.name.split("scrap").join("").toLowerCase();
-  const type =
-    name === "classement"
-      ? await scrapFunction(URL_UFOLEP62TT_EXCELLENCE1)
-      : await scrapFunction();
+app.use(express.json());
 
-  try {
-    // write in data/json folder
-    mkdir("data/json", { recursive: true }, (err) => {
-      if (err) throw err;
-    });
-    writeFileSync(`data/json/${name}.json`, JSON.stringify(type, null, 2));
-    const endTimer = new Date().getTime();
-    console.log(`${name} done in ${endTimer - startTimer}ms`);
-    console.log("done");
-  } catch (err) {
-    console.error(err.message);
-  }
-}
+// url : localhost:3000/
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+});
 
-main(fetchClassement);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+app.get("/classement", async (req, res) => {
+  const json = await fetchClassement(URL_UFOLEP62TT_EXCELLENCE1);
+  res.send({
+    message: "Classement fetched",
+    json: json,
+  });
+});
