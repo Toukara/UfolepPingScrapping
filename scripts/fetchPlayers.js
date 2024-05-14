@@ -1,4 +1,5 @@
 import scrapData from "./fetchData.js";
+import writeJson from "./writeFile.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -34,6 +35,7 @@ async function scrapPlayers() {
   }
 
   console.log(`${players.length} players scraped`);
+  writeJson(players, "players");
   return players;
 }
 

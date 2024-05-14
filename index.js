@@ -30,3 +30,11 @@ app.get("/classement", async (req, res) => {
     json: json,
   });
 });
+
+app.get("/players", async (req, res) => {
+  const json = await fetchPlayers();
+  res.send({
+    message: "Players fetched",
+    json: json,
+  });
+});
