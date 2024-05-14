@@ -12,7 +12,13 @@ async function scrapPlayers() {
   const table = document.querySelector("table");
   const rows = table.querySelectorAll("tr:not([class])");
 
-  const players = [];
+  const players = [
+    {
+      timestamp: new Date().getTime(),
+      date: new Date().toISOString().split("T")[0],
+      players: 1,
+    },
+  ];
 
   for (let i = 1; i < rows.length; i++) {
     const cells = rows[i].querySelectorAll("td");
@@ -31,10 +37,10 @@ async function scrapPlayers() {
       MUTATION: cellsTrimmed[7],
     };
 
+    players[0].players++;
     players.push(player);
   }
 
-  console.log(`${players.length} players scraped`);
   writeJson(players, "players");
   return players;
 }

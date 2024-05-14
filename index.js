@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import express, { json } from "express";
+import express from "express";
 // Destructure required properties
 const { URL_UFOLEP62TT_EXCELLENCE1, PORT } = process.env;
 
